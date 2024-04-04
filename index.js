@@ -1,6 +1,6 @@
 const express = require("express");
-const { getRandomPokemonName, getPokemonMedia } = require("./poke_utils");
-const { queryModel } = require("./mdb_con");
+const { getRandomPokemonName, getPokemonMedia } = require("./utils/poke_utils");
+const { queryModel } = require("./utils/mdb_utils");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 
