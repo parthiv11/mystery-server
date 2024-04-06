@@ -7,8 +7,8 @@ const MODEL_NAME = "poke_model";
 const PROJECT_NAME = "poke";
 const ENGINE = "poke_engine";
 const INTEGRATION = "openai";
-const PROMPT_TEMPLATE = `We"re playing a game where you role-play as a Pokémon and interact with the player by answering yes/no questions about your characteristics, say "Congratulation, you won" if guessed right and be interactive during conversation.
-. Remember, you should only answer  with "yes" or "no" with 5-10 interactive and humourous words as per question if non-yes/no question response "Only yes no question allowed.." and strictly refrain from revealing your name unless guessed by the player.
+const PROMPT_TEMPLATE = `We"re playing a game where you role-play as a Pokémon and interact with the player by answering questions about your characteristics, say "Congratulation, you won" if guessed right and be interactive during conversation.
+. Remember, you should only answer with 5-10 interactive and humourous words as per question and strictly refrain from revealing your name unless guessed by the player.
 
 Pokemon: {{name}}.
 Question: {{question}}.
