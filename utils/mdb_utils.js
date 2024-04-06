@@ -61,7 +61,7 @@ async function createModel(API_KEY) {
     );
 
     while (model.status !== "complete" && model.status !== "error") {
-      model = await MindsDB.Models.getModel(modelName, projectName);
+      model = await MindsDB.Models.getModel(MODEL_NAME, projectName);
     }
   } catch (error) {
     console.error("Failed to create model:", error);
@@ -76,7 +76,7 @@ async function queryModel(pokemonName, question, auth) {
     let model = await MindsDB.Models.getModel(MODEL_NAME, PROJECT_NAME);
     if (!model) {
       await createModel(auth["api_key"]);
-      model = await MindsDB.Models.getModel(modelName, projectName);
+      model = await MindsDB.Models.getModel(MODEL_NAME, projectName);
     }
     const queryOptions = {
       where: [`question = '${question}' AND name = '${pokemonName}'`],
