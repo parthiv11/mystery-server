@@ -10,8 +10,10 @@ require('dotenv').config();
 const app = express();
 const port = 4000;
 
-
-app.use(cors());
+console.log(process.env.FRONTEND_URL)
+app.use(cors({
+  origin: process.env.FRONTEND_URL
+}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -34,7 +36,7 @@ function authenticateToken(req, res, next) {
     return res.status(401).json({ message: "Unauthorized" });
   }
 
-  jwt.verify(token, process.env.VITE_SECRET_KEY, (err, auth) => {
+  jwt.verify(token, process.env.SECRET_KEY, (err, auth) => {
     if (err) {
       return res.status(403).json({ message: "Forbidden" });
     }

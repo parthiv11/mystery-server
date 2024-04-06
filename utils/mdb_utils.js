@@ -93,7 +93,7 @@ async function generateToken(user, password, api_key) {
   
   await connectMindsDB(user, password);
 
-  const secretKey = process.env.VITE_SECRET_KEY; 
+  const secretKey = process.env.SECRET_KEY; 
   const payload = {
     user: user,
     password: password,
