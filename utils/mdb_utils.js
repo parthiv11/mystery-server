@@ -50,7 +50,7 @@ async function createModel(API_KEY) {
         prompt_template: PROMPT_TEMPLATE,
       },
       max_tokens: 100,
-      temperature: 0.1,
+      temperature: 0,
       // api_key: API_KEY,
     };
     let model = await MindsDB.Models.trainModel(
